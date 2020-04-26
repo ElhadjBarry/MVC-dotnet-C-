@@ -1,0 +1,99 @@
+﻿@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+    <br />  
+    <div style="background-color: #7FB3D5 ;">
+        <br />
+        <fieldset style="border:3px solid blue;  width:450px">
+            <legend>LOAD FILE</legend>
+            <input type="file" id="audi" /><input type="button" id="bfile" value=" ok" /><br /> <br />
+        </fieldset>
+
+        <hr style="background-color:red ;" />
+
+
+        <div id="waveform"></div>
+
+        <hr style="background-color:red ;" />
+
+        <div class="text-center" >
+            <button type="button" id="button-play" value=" ">
+                <i class="fas fa-play"></i>
+            </button>
+            <button type="button" id="button-pause">
+                <i class="fas fa-pause-circle"></i>
+            </button>
+            <button type="button" id="button-stop">
+                <i class="far fa-stop-circle"></i>
+            </button>
+            <button type="button" id="back">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button type="button" id="next">
+                <i class="fas fa-step-forward"></i>
+            </button>
+
+        </div>
+        <br />
+        <div style="margin-left:50px ;" >
+            <button id="ajout"><i class="fas fa-save"></i> Save</button>
+        </div>
+        
+        <br />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/wavesurfer.min.js"></script>
+
+
+        <script>var buttons = {
+                play: document.getElementById("button-play"),
+                pause: document.getElementById("button-pause"),
+                stop: document.getElementById("button-stop")
+            };
+
+            var lecteur = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'violet',
+                progressColor: 'purple'
+            });
+
+            buttons.play.addEventListener('click', function () {
+                lecteur.play();
+                buttons.stop.disabled = false;
+                buttons.pause.disabled = false;
+                buttons.play.disabled = true;
+            }, false);
+
+            buttons.pause.addEventListener('click', function () {
+                lecteur.pause();
+
+                buttons.pause.disabled = true;
+                buttons.play.disabled = false;
+            }, false);
+
+            buttons.stop.addEventListener('click', function () {
+                lecteur.stop();
+
+                buttons.stop.disabled = true;
+                buttons.pause.disabled = true;
+                buttons.play.disabled = false;
+            }, false);
+            
+
+            lecteur.on("ready", function () {
+                buttons.pause.disabled = false;
+            });
+            window.addEventListener('resize', function () {
+                var object = lecteur.getCurentTime() / lecteur.getDuration();
+                lecteur.empty();
+                lecteur.drawBuffer();
+                lecteur.seekTo(object);
+
+
+
+            },false);
+            lecteur.load('audio.m4a');
+        </script>
+
+    </div>
+    

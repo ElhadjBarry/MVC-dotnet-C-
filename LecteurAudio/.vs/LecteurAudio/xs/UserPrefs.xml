@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{91EB1C25-AB9B-4003-9246-E37053D49D28}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Dashboard.cshtml">
+    <Files>
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="11" Column="105" />
+      <File FileName="wwwroot/css/site.css" Line="73" Column="7" />
+      <File FileName="Pages/Index.cshtml" Line="7" Column="26" />
+      <File FileName="Pages/Dashboard.cshtml" Line="23" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LecteurAudio" expanded="True">
+            <Node name="LecteurAudio" expanded="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="Dashboard.cshtml" selected="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="images" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.LecteurAudio PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
